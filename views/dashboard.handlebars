@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <h1 class="navbar-brand">Dashboard</h1>
+    </div>
+</nav>
+{{!-- create new post card that appears when the + New Post button is clicked --}}
+<div class="card">
+  <h5 class="card-header">Create New Post</h5>
+  <div class="card-body">
+<form>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Title</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Content</label>
+        <input type="text" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+  </div>
+</div>
+<br>
+
+{{!-- Display all of user's posts --}}
+{{#if project.length}}
+
+{{#each posts as |post|}}
+<div class="card ">
+  <div class="card-header ">
+    {{post.title}}
+  </div>
+  <div class="card-body">
+    <h5>{{post.date}}</h5>
+    <p class="card-text">{{post.content}}</p>
+  </div>
+</div>
+
+{{!-- Edit Post card that appears when a user's blog post is clicked --}}
+<div class="card">
+  <h5 class="card-header">Edit Post</h5>
+  <div class="card-body">
+<form>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Title</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" value="{{post.title}}" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Content</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" value="{{post.content}}">
+    </div>
+    <button type="submit" class="btn btn-primary">Update Post</button>
+    <button type="submit" class="btn btn-primary">Delete</button>
+</form>
+  </div>
+</div>
+<br>
+{{/each}}
+
+{{/if}}
+
+<div class="d-grid gap-2 col-3 mx-auto">
+  <button class="btn btn-primary" type="button">+ New Post</button>
+</div>
