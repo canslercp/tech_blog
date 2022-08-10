@@ -3,9 +3,9 @@ const postRoutes = require('./postRoutes');
 const userRoutes = require('./userRoutes');
 
 // .api/user
- router.use('/user', userRoutes);
+ router.use('/users', userRoutes);
 
 // /api/post
-router.use('/post', postRoutes);
+router.use('/posts', postRoutes);
 
 module.exports = router;
