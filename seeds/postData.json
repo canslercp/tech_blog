@@ -1,14 +1,10 @@
 [
     {
-        "title": "Squirrels",
-        "content": "Why can I never catch a squirrel, no matter how hard I try?..."
+        "title": "Why MVC is so Important",
+        "content": "MVC allows developers to maintain a true seperation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic."
     },
     {
-        "title": "Birds",
-        "content": "I wonder what it would be like to fly..."
-    },
-    {
-        "title": "Carrots",
-        "content": "I could seriously eat carrots all day... why are they so good?"
+        "title": "Authentication vs. Authorization",
+        "content": "There is a difference between authentication and authorzation. Authentication means confirming your own identitiy, whereas authorization means being allowed access to the system."
     }
 ]
