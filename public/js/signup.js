@@ -1,13 +1,11 @@
-const loginFormHandler = async (event) => {
+const signupFormHandler = async (event) => {
     event.preventDefault();
-
-    //Collect values from the login form
-    const username = document.querySelector('#inputUsername').value.trim();
-    const password = document.querySelector('#inputPassword').value.trim();
-
+    //Collect values from the signup form
+    const username = document.querySelector('#username-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
+    //Send a POST request to the API endpoint
     if (username && password) {
-        //Send a POST request to the API endpoint
-        const response = await fetch('/api/users/login', {
+        const response = await fetch('/api/users/signup', {
             method: 'POST',
             body: JSON.stringify({ username, password }),
             headers: { 'Content-Type': 'application/json' },
@@ -22,6 +20,7 @@ const loginFormHandler = async (event) => {
     }
 };
 
+
 document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+    .querySelector('.signup-form')
+    .addEventListener('submit', signupFormHandler);

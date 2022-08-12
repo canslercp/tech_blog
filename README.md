@@ -24,4 +24,4 @@
 ![New Homepage](./Assets/Screen%20Shot%202022-08-11%20at%209.48.04%20PM.png)
 
 ## Link
-
+https://tech-blog-cansler.herokuapp.com/
