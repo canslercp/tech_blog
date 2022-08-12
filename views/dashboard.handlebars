@@ -4,17 +4,17 @@
     </div>
 </nav>
 {{!-- create new post card that appears when the + New Post button is clicked --}}
-<div class="card">
+<div class="card" id="create-post" style="display: none;">
   <h5 class="card-header">Create New Post</h5>
   <div class="card-body">
-<form>
+<form class="new-post-form">
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Title</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <label for="input-title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="input-title">
     </div>
     <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Content</label>
-        <input type="text" class="form-control" id="exampleInputPassword1">
+        <label for="input-content" class="form-label">Content</label>
+        <input type="text" class="form-control" id="input-content">
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
 </form>
@@ -23,7 +23,7 @@
 <br>
 
 {{!-- Display all of user's posts --}}
-{{#if project.length}}
+{{#if posts.length}}
 
 {{#each posts as |post|}}
 <div class="card ">
@@ -37,20 +37,20 @@
 </div>
 
 {{!-- Edit Post card that appears when a user's blog post is clicked --}}
-<div class="card">
+<div class="card" style="display: none;">
   <h5 class="card-header">Edit Post</h5>
   <div class="card-body">
 <form>
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Title</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" value="{{post.title}}" aria-describedby="emailHelp">
+        <label for="edit-title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="edit-title" value="{{post.title}}" aria-describedby="emailHelp">
     </div>
     <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Content</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" value="{{post.content}}">
+        <label for="edit-content" class="form-label">Content</label>
+        <input type="text" class="form-control" id="edit-content" value="{{post.content}}">
     </div>
-    <button type="submit" class="btn btn-primary">Update Post</button>
-    <button type="submit" class="btn btn-primary">Delete</button>
+    <button type="submit" class="btn btn-primary" id="update-button">Update Post</button>
+    <button type="submit" class="btn btn-primary" id="delete-button">Delete</button>
 </form>
   </div>
 </div>
@@ -60,5 +60,7 @@
 {{/if}}
 
 <div class="d-grid gap-2 col-3 mx-auto">
-  <button class="btn btn-primary" type="button">+ New Post</button>
+  <button class="btn btn-primary" type="button" id="new-post">+ New Post</button>
 </div>
+
+<script src="./js/dashboard.js"></script>

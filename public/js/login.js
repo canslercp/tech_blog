@@ -39,7 +39,7 @@ const signupFormHandler = async (event) => {
             //if successful, redirect the browser to the profile page
             document.location.replace('/dashboard');
         } else {
-            alert(responsse.statusText);
+            alert(response.statusText);
         }
     }
 };
@@ -50,4 +50,4 @@ document
 
 document
     .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler)
+    .addEventListener('submit', signupFormHandler);
