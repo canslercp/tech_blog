@@ -12,17 +12,6 @@
     "start": "node server.js",
     "seed": "node seeds/seed.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/canslercp/tech_blog.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/canslercp/tech_blog/issues"
-  },
-  "homepage": "https://github.com/canslercp/tech_blog#readme",
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bcrypt": "^5.0.1",
