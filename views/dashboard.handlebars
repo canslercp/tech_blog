@@ -26,6 +26,7 @@
 {{#if posts.length}}
 
 {{#each posts as |post|}}
+<button class='no-button' type="button" id="edit-post-button">
 <div class="card ">
   <div class="card-header ">
     {{post.title}}
@@ -35,9 +36,10 @@
     <p class="card-text">{{post.content}}</p>
   </div>
 </div>
+</button>
 
 {{!-- Edit Post card that appears when a user's blog post is clicked --}}
-<div class="card" style="display: none;">
+<div class="card" id='edit-post' style="display: none;">
   <h5 class="card-header">Edit Post</h5>
   <div class="card-body">
 <form>

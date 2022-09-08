@@ -27,6 +27,12 @@ const displayCreateCard = async (event) => {
   const newPostCard = document.querySelector('#create-post').style.display='flex';
 }
 
+const displayEditCard = async (event) => {
+  event.preventDefault();
+
+  const editPostCard = document.querySelector('#edit-post').style.display='flex';
+}
+
 document
   .querySelector('.new-post-form')
   .addEventListener('submit', newFormHandler);
@@ -34,3 +40,7 @@ document
 document
   .querySelector('#new-post')
   .addEventListener('click', displayCreateCard);
+
+document
+  .querySelector('#edit-post-button')
+  .addEventListener('click', displayEditCard);
