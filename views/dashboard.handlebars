@@ -42,7 +42,7 @@
 <div class="card" id='edit-post' style="display: none;">
   <h5 class="card-header">Edit Post</h5>
   <div class="card-body">
-<form>
+<form class="edit-post-form" data-id="{{post.id}}">
     <div class="mb-3">
         <label for="edit-title" class="form-label">Title</label>
         <input type="text" class="form-control" id="edit-title" value="{{post.title}}" aria-describedby="emailHelp">
@@ -51,8 +51,8 @@
         <label for="edit-content" class="form-label">Content</label>
         <input type="text" class="form-control" id="edit-content" value="{{post.content}}">
     </div>
-    <button type="submit" class="btn btn-primary" id="update-button">Update Post</button>
-    <button type="submit" class="btn btn-primary" id="delete-button">Delete</button>
+    <button type="submit" class="btn btn-primary" id="update-button" >Update Post</button>
+    <button type="button" class="btn btn-primary" id="delete-button" data-id="{{post.id}}">Delete</button>
 </form>
   </div>
 </div>

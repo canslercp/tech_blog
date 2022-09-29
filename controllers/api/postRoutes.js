@@ -16,6 +16,26 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
+// route to edit a post
+router.put('/:id', withAuth, async (req, res) => {
+    try {
+        const editData = await Post.update(
+        {...req.body},
+        {where: {
+            id: req.params.id,
+            user_id: req.session.user_id,
+        },
+        });
+
+        if (!editData) {
+            res.status(404).json({message: 'No post found with this id :/' });
+        }
+        res.status(200).json(editData);
+    }   catch (err) {
+        res.status(500).json
+    }
+})
+
 // route to delete a post
 router.delete('/:id', withAuth, async (req, res) => {
     try {
@@ -27,7 +47,7 @@ router.delete('/:id', withAuth, async (req, res) => {
         });
 
         if (!postData) {
-            res.status(404).json({ message: "No project found with this id :/" });
+            res.status(404).json({ message: "No post found with this id :/" });
         }
 
         res.status(200).json(postData);
